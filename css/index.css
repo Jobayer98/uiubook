@@ -1,0 +1,12 @@
+.link-color {
+    color: #f68b1f;
+}
+.alignment {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #f68b1f !important;
+    outline: none;
+    border:none;
+}
