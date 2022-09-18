@@ -26,6 +26,12 @@
 </head>
 <body>
     <div class="container">
+    <div class="">
+            <h3>Books of CSE</h3>
+        </div>
+        <div class="">
+            <h4>Exchange Books</h4>
+        </div>
         <div class="row gy-4 my-3">
             
             <?php
@@ -67,7 +73,44 @@
 
                 error_reporting(0);
 
-                $query ="SELECT Title,AuthorName FROM buybooks WHERE Category = 'CSE' ";
+                $query ="SELECT Title,AuthorName FROM exchangebooks WHERE Category = 'CSE' ORDER BY Title ASC";
+                $query_run = mysqli_query($conn, $query);
+
+                $check_result = mysqli_num_rows($query_run) > 0;
+
+                if($check_result){
+                    while($row = mysqli_fetch_assoc($query_run))
+                    {
+                        ?>
+                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+                                <div class="card" id="custom">
+                                    <img src="img/bg.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><?php  echo $row['Title']; ?></h3>
+                                        <p class="card-text">Writer : <?php echo $row['AuthorName']; ?></p>
+                                        <a class="buy" href="#">Exchange</a>                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php
+                    }
+                }else{
+                    echo "No result found";
+                }
+            ?>
+        </div>
+        <div class="">
+            <h4>Buy Books</h4>
+        </div>
+        <div class="row gy-4 my-3">
+            
+            <?php
+                include 'config.php';
+
+                error_reporting(0);
+
+                $query ="SELECT Title,AuthorName FROM buybooks WHERE Category = 'CSE' ORDER BY Title ASC";
                 $query_run = mysqli_query($conn, $query);
 
                 $check_result = mysqli_num_rows($query_run) > 0;

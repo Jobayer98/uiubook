@@ -45,7 +45,7 @@
                         <h2>Buy Books</h2>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <a href="see_buy.php" class="link-color float-right">See More</a>
+                        <a href="see_buy.php" class="link-color float-right">View All</a>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                         <h2>Exchange Books</h2>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <a href="exchange.php" class="link-color float-right">See More</a>
+                        <a href="exchange.php" class="link-color float-right">View All</a>
                     </div>
                 </div>
             </div>

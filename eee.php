@@ -26,6 +26,15 @@
 </head>
 <body>
     <div class="container">
+
+        <div class="">
+            <h3>Books of EEE</h3>
+        </div>
+
+        <div class="">
+            <h4>Exchange Books</h4>
+        </div>
+
         <div class="row gy-4 my-3">
             
             <?php
@@ -33,7 +42,7 @@
 
                 error_reporting(0);
 
-                $query ="SELECT Title,AuthorName FROM exchangebooks WHERE Category = 'EEE' ";
+                $query ="SELECT Title,AuthorName FROM exchangebooks WHERE Category = 'EEE' ORDER BY Title ASC";
                 $query_run = mysqli_query($conn, $query);
 
                 $check_result = mysqli_num_rows($query_run) > 0;
@@ -60,6 +69,10 @@
                 }
             ?> 
         </div>
+
+        <div class="">
+            <h4>Buy Books</h4>
+        </div>
         <div class="row gy-4 my-3">
             
             <?php
@@ -67,7 +80,7 @@
 
                 error_reporting(0);
 
-                $query ="SELECT Title,AuthorName FROM buybooks WHERE Category = 'EEE' ";
+                $query ="SELECT Title,AuthorName FROM buybooks WHERE Category = 'EEE' ORDER BY Title ASC";
                 $query_run = mysqli_query($conn, $query);
 
                 $check_result = mysqli_num_rows($query_run) > 0;
