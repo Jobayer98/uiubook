@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="">
+        <div class="mt-3 mb-5">
             <h3>Books of BBA</h3>
         </div>
 
@@ -69,7 +69,7 @@
             ?>
         </div>
 
-        <div class="">
+        <div class="mt-5">
             <h4>Buy Books</h4>
         </div>
 

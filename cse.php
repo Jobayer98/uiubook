@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="container">
-    <div class="">
+    <div class="mt-3 mb-5">
             <h3>Books of CSE</h3>
         </div>
         <div class="">
@@ -84,7 +84,19 @@
                         ?>
                             <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
                                 <div class="card" id="custom">
-                                    <img src="img/bg.jpg" class="card-img-top" alt="...">
+                                    <div>
+                                        <?php
+                                            $query = " select * from image ";
+                                            $result = mysqli_query($db, $query);
+                                    
+                                            while ($data = mysqli_fetch_assoc($result)) {
+                                        ?>
+                                            <img src="./img/bg.jpg<?php echo $data['filename']; ?>">
+                                    
+                                            <?php
+                                        }
+                                    ?>
+                                    </div>
                                     <div class="card-body">
                                         <h3 class="card-title"><?php  echo $row['Title']; ?></h3>
                                         <p class="card-text">Writer : <?php echo $row['AuthorName']; ?></p>
@@ -100,7 +112,7 @@
                 }
             ?>
         </div>
-        <div class="">
+        <div class="mt-5">
             <h4>Buy Books</h4>
         </div>
         <div class="row gy-4 my-3">
