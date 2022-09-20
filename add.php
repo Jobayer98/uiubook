@@ -21,9 +21,8 @@
 
         mysqli_close($link);
 
-        echo"<h3>Successfully added</h3>";
-        echo "<button><a href=user.php>User</a></button>";
-        
+        header("Location: user.php");
+        exit();
       }
 
 

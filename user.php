@@ -27,16 +27,21 @@
 <body>
     <div class="container">
         <div class="mt-3 mb-5">
-            <button class='ui orange button'><a class='cus-btn' href="add_book.php">Add Book</a></button>
+            <button class='ui orange button'><a class='cus-btn' href="sellbook.php">Sell Book</a></button>
+            <button class='ui orange button'><a class='cus-btn' href="exchangebook.php">Exchange Book</a></button>
         </div>
+        <div>
+            <h3>Your posted sell books</h3>
+        </div>
+        
         <?php
             include('config.php');
 
-            $results = mysqli_query( $conn, "SELECT * FROM buybooks" )
+            $results = mysqli_query( $conn, "SELECT * FROM buybooks WHERE user_id=011191200" )
                 or die("Can not execute query");
 
             echo "<table class='ui celled table'> \n";
-            echo "<th>Book title </th><th>Author Name</th><th>Descriptions</th><th>Edit</th><th>Delete</th>\n";
+            echo "<th>Book title </th><th>Author Name</th><th>Descriptions</th><th>Delete</th>\n";
 
             while( $rows = mysqli_fetch_array( $results ) ) {
                 extract( $rows );
@@ -44,8 +49,33 @@
                 echo "<td class='negative'> $Title </td>";
                 echo "<td class='positive'> $AuthorName </td>";
                 echo "<td class='negative'> $Description</td>";
-                echo "<td class='negative'> <button class='btn btn-success'><a class='cus-btn' href=#>Edit</a></button></td>";
-                echo "<td class='positive'> <button class='btn btn-danger'><a class='cus-btn' href=#>Delete</a></button></td>";
+                echo "<td class='positive'> <button class='btn btn-danger'><a class='cus-btn' href='deletebook.php?id=$BookID'>Delete</a></button></td>";
+            }
+            echo "</table> \n";
+        ?>
+    </div>
+
+    <div class="container">
+        <div class="mt-5 mb-3">
+            <h3>Your posted exchange books</h3>
+        </div>
+        
+        <?php
+            include('config.php');
+
+            $results = mysqli_query( $conn, "SELECT * FROM exchangebooks WHERE user_id=011191200")
+                or die("Can not execute query");
+
+            echo "<table class='ui celled table'> \n";
+            echo "<th>Book title </th><th>Author Name</th><th>Descriptions</th><th>Delete</th>\n";
+
+            while( $rows = mysqli_fetch_array( $results ) ) {
+                extract( $rows );
+                echo "<tr>";
+                echo "<td class='negative'> $Title </td>";
+                echo "<td class='positive'> $AuthorName </td>";
+                echo "<td class='negative'> $Description</td>";
+                echo "<td class='positive'> <button class='btn btn-danger'><a class='cus-btn' href='deletebook2.php?id=$BookID'>Delete</a></button></td>";
             }
             echo "</table> \n";
         ?>

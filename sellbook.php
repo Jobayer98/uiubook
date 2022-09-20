@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="container">
-        <h3 class="mt-3 mb-5">Add Your Book</h3>
+        <h3 class="mt-3 mb-5">Add Your Sell's Book</h3>
         <form class="ui form" action="add.php" method="post" enctype="multipart/form-data">
             <div class="field eight wide">
                 <label>Book title</label>
@@ -39,11 +39,10 @@
                 <div class="field">
                     <input type="num" name="price" placeholder="" required>
                 </div>
-                <label>Description</label>
+                <label>Descriptions</label>
                 <div class="field">
-                    <input type="text" name="desc" placeholder="Descriptions" required>
+                    <input type="text" name="desc" placeholder="" required>
                 </div>
-                <!-- <br> -->
                 <label for="">Categories</label>
                 <div class="field">
                     <input type="text" name="cate" placeholder="CSE,EEE,.." required>
