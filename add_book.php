@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <h3 class="mt-3 mb-5">Add Your Book</h3>
-        <form class="ui form" action="add.php" method="post" enctype="multipart/form-data>
+        <form class="ui form" action="add.php" method="post" enctype="multipart/form-data">
             <div class="field eight wide">
                 <label>Book title</label>
                 <div class="field">
@@ -57,7 +57,6 @@
                     <button class="ui orange button" type="submit" name="save">Add</button>
                 </div>
             </div>
-            <!-- <input class="ui orange button" type="submit" name="upload" value="Add"> -->
         </form>
     </div>
     

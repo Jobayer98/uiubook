@@ -10,7 +10,7 @@
         $desc = mysqli_real_escape_string($link, $_REQUEST['desc']);
         $cate = mysqli_real_escape_string($link, $_REQUEST['cate']);
     
-        $filename = $_FILES["uploadfile"]["title"];
+        $filename = $_FILES["uploadfile"]["name"];
         $tempname = $_FILES["uploadfile"]["tmp_name"];
         $folder = "./img/" . $filename;
     
@@ -20,14 +20,16 @@
         mysqli_query($link, $sql);
 
         mysqli_close($link);
+
+        echo"<h3>Successfully added</h3>";
+        echo "<button><a href=user.php>User</a></button>";
         
-        echo "<h3>Successful</h3>";
-        echo "<a href='user.php'></a>";
       }
 
 
 
-
+// include('config.php');
+// include('security.php');
 
 // if (isset($_POST['save'])){
 //     $title = $_POST['title'];

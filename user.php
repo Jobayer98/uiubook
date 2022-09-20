@@ -32,7 +32,7 @@
         <?php
             include('config.php');
 
-            $results = mysqli_query( $conn, "SELECT * FROM exchangebooks" )
+            $results = mysqli_query( $conn, "SELECT * FROM buybooks" )
                 or die("Can not execute query");
 
             echo "<table class='ui celled table'> \n";
